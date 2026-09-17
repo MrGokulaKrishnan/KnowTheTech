@@ -1,0 +1,16 @@
+﻿{
+  "name": "KnowTheTech",
+  "short_name": "KnowTheTech",
+  "description": "One ecosystem. Multiple ideas. Built with technology.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#0284C7",
+  "icons": [
+    {
+      "src": "/brand/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
