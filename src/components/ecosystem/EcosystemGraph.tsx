@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, ArrowRight, Sparkles } from 'lucide-react';
 import { PRODUCTS } from '@/data/products';
@@ -99,8 +99,8 @@ export const EcosystemGraph: React.FC = () => {
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
             className="w-28 h-28 rounded-2xl bg-gradient-to-br from-[#0B2A4A] to-[#020617] border-2 border-sky-400/60 p-2 shadow-glow-electric backdrop-blur-xl flex flex-col items-center justify-center text-center group cursor-default"
           >
-            <div className="w-12 h-12 rounded-xl overflow-hidden mb-1 shadow-md border border-white/20">
-              <img src="/brand/logo.png" alt="KnowTheTech Master Brand" className="w-full h-full object-cover" />
+            <div className="w-12 h-12 rounded-xl overflow-hidden mb-1 shadow-md border border-white/20 bg-black flex items-center justify-center">
+              <img src="/brand/logo.png" alt="KnowTheTech Master Brand" className="w-full h-full object-contain" />
             </div>
             <span className="font-display font-bold text-xs text-white tracking-wide">
               KnowTheTech

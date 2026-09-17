@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Code2, Globe } from 'lucide-react';
 import { SITE_CONFIG } from '@/data/site';
@@ -16,11 +16,11 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 flex flex-col justify-between">
             <div>
               <Link to="/" className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-sky-400 rounded-lg w-fit">
-                <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg border border-sky-400/20 group-hover:border-sky-400/50 transition-all">
+                <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg border border-sky-400/20 group-hover:border-sky-400/50 transition-all bg-black flex items-center justify-center">
                   <img
                     src="/brand/logo.png"
                     alt="KnowTheTech Logo"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <div>

@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, Compass } from 'lucide-react';
 import { SITE_CONFIG } from '@/data/site';
@@ -27,11 +27,11 @@ export const Navbar: React.FC = () => {
             className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-sky-400 rounded-lg p-1"
             aria-label="KnowTheTech Home"
           >
-            <div className="relative w-9 h-9 rounded-xl overflow-hidden shadow-lg border border-sky-400/20 group-hover:border-sky-400/50 transition-all group-hover:scale-105">
+            <div className="relative w-9 h-9 rounded-xl overflow-hidden shadow-lg border border-sky-400/20 group-hover:border-sky-400/50 transition-all group-hover:scale-105 bg-black flex items-center justify-center">
               <img
                 src="/brand/logo.png"
                 alt="KnowTheTech Logo"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
             <div className="flex flex-col">

@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink, ArrowRight } from 'lucide-react';
 import { PRODUCTS } from '@/data/products';
@@ -10,8 +10,8 @@ export const EcosystemMobileTree: React.FC = () => {
     <div className="md:hidden space-y-6">
       {/* Root Node */}
       <GlassCard className="p-6 text-center border-sky-400/40 bg-gradient-to-b from-[#0B2A4A]/40 to-[#06152E]/70 shadow-glow-electric">
-        <div className="w-14 h-14 mx-auto mb-3 rounded-2xl overflow-hidden border border-sky-400/40 shadow-lg">
-          <img src="/brand/logo.png" alt="KnowTheTech" className="w-full h-full object-cover" />
+        <div className="w-14 h-14 mx-auto mb-3 rounded-2xl overflow-hidden border border-sky-400/40 shadow-lg bg-black flex items-center justify-center">
+          <img src="/brand/logo.png" alt="KnowTheTech" className="w-full h-full object-contain" />
         </div>
         <Badge variant="tech" size="sm" className="mb-2">Central Ecosystem Hub</Badge>
         <h3 className="font-display font-bold text-xl text-white">KnowTheTech</h3>

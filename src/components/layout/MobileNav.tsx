@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { X, ArrowUpRight, Compass } from 'lucide-react';
 import { SITE_CONFIG } from '@/data/site';
@@ -51,7 +51,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
           {/* Header */}
           <div className="flex items-center justify-between pb-6 border-b border-white/10">
             <div className="flex items-center gap-3">
-              <img src="/brand/logo.png" alt="KnowTheTech Logo" className="w-8 h-8 rounded-lg object-contain shadow-md" />
+              <img src="/brand/logo.png" alt="KnowTheTech Logo" className="w-8 h-8 rounded-lg object-contain shadow-md bg-black" />
               <span className="font-display font-bold text-lg text-white">KnowTheTech</span>
             </div>
             <button
