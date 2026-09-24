@@ -1,6 +1,5 @@
-{
+﻿{
   "hosting": {
-    "site": "knowthetech",
     "public": "dist",
     "ignore": [
       "firebase.json",
