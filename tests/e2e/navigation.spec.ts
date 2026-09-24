@@ -20,7 +20,7 @@ test.describe('Navigation & Core Routes', () => {
     // Navigate to Products
     await page.getByRole('link', { name: 'Products', exact: true }).first().click();
     await expect(page).toHaveURL(/\/products/);
-    await expect(page.getByRole('heading', { name: /All Ecosystem Products/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /Eight Focused Products/i })).toBeVisible();
 
     // Navigate to Ecosystem
     await page.getByRole('link', { name: 'Ecosystem', exact: true }).first().click();

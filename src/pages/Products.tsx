@@ -59,6 +59,7 @@ export const Products: React.FC = () => {
       if (!debouncedQuery.trim()) return true;
 
       const q = debouncedQuery.toLowerCase().trim();
+      const numberMatch = product.number.includes(q);
       const nameMatch = product.name.toLowerCase().includes(q);
       const taglineMatch = product.tagline.toLowerCase().includes(q);
       const descMatch = product.description.toLowerCase().includes(q);
@@ -66,7 +67,7 @@ export const Products: React.FC = () => {
       const techMatch = product.technologies.some((t) => t.toLowerCase().includes(q));
       const highlightMatch = product.highlights.some((h) => h.toLowerCase().includes(q));
 
-      return nameMatch || taglineMatch || descMatch || catMatch || techMatch || highlightMatch;
+      return numberMatch || nameMatch || taglineMatch || descMatch || catMatch || techMatch || highlightMatch;
     });
   }, [activeCategory, debouncedQuery]);
 
@@ -80,7 +81,7 @@ export const Products: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "KnowTheTech Products Catalog",
-    "description": "Browse all focused digital tools and web applications in the KnowTheTech ecosystem.",
+    "description": "Browse all eight focused digital tools and web applications in the KnowTheTech ecosystem.",
     "url": "https://knowthetech.web.app/products",
     "hasPart": PRODUCTS.map(p => ({
       "@type": "SoftwareApplication",
@@ -95,7 +96,7 @@ export const Products: React.FC = () => {
     <PageTransition>
       <SEOHead
         title="Products Catalog"
-        description="Explore the full registry of web applications and developer tools built inside the KnowTheTech ecosystem."
+        description="Explore the full 8-product registry of web applications and developer tools built inside the KnowTheTech ecosystem."
         canonical="https://knowthetech.web.app/products"
       />
       <JsonLd data={collectionSchema} id="products-collection-schema" />
@@ -103,9 +104,9 @@ export const Products: React.FC = () => {
       <div className="pt-32 pb-24 md:pt-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            eyebrow="Product Catalog"
-            title="All Ecosystem Products"
-            description="Explore independent applications created to streamline developer learning, computer science visualizers, career workflows, and document utilities."
+            eyebrow="Explore the Ecosystem"
+            title="Eight Focused Products. One Technology Ecosystem."
+            description="Explore independent applications engineered to solve concrete problems across device connectivity, data migration, document utilities, career AI, markdown reading, DSA visualizers, and Java learning."
           />
 
           {/* Search Bar */}
@@ -128,7 +129,7 @@ export const Products: React.FC = () => {
             products={filteredProducts}
             onReset={handleReset}
             emptyTitle={`No products found for "${searchQuery}"`}
-            emptyDescription="Try searching for a different keyword such as 'Java', 'Algorithms', 'PDF', or reset your filters."
+            emptyDescription="Try searching for a different keyword such as 'Mice', 'Migrate', 'File', 'Resume', 'Job', 'MD', 'Binary', 'Java', or reset your filters."
           />
         </div>
       </div>

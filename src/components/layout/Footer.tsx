@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Code2, Globe } from 'lucide-react';
 import { SITE_CONFIG } from '@/data/site';
@@ -6,7 +6,7 @@ import { PRODUCTS } from '@/data/products';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="relative bg-[#01040f] border-t border-white/10 pt-16 pb-12 overflow-hidden">
+    <footer className="relative bg-[#000000] border-t border-white/10 pt-16 pb-12 overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-sky-500/10 blur-[90px] pointer-events-none" />
 
@@ -16,11 +16,11 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 flex flex-col justify-between">
             <div>
               <Link to="/" className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-sky-400 rounded-lg w-fit">
-                <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg border border-sky-400/20 group-hover:border-sky-400/50 transition-all bg-black flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg border border-sky-400/20 group-hover:border-sky-400/50 transition-all">
                   <img
                     src="/brand/logo.png"
                     alt="KnowTheTech Logo"
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <div>
@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
                 {SITE_CONFIG.concept}
               </p>
               <p className="mt-2 text-xs text-slate-500 leading-relaxed max-w-sm">
-                A unified network of developer tools, interactive learning platforms, career applications, and experimental web software.
+                Eight focused applications brought together under a unified technology product ecosystem.
               </p>
             </div>
 
@@ -71,18 +71,19 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Col 3: Products */}
+          {/* Col 3: All 8 Products */}
           <div>
             <h3 className="font-display font-semibold text-sm text-white uppercase tracking-wider mb-4">
-              Products
+              Products (01–08)
             </h3>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2 text-sm">
               {PRODUCTS.map((product) => (
                 <li key={product.id}>
                   <Link
                     to={`/products/${product.slug}`}
-                    className="text-slate-400 hover:text-sky-300 transition-colors inline-flex items-center gap-1.5"
+                    className="text-slate-400 hover:text-sky-300 transition-colors inline-flex items-center gap-2"
                   >
+                    <span className="font-mono text-xs text-sky-400 font-semibold">{product.number}</span>
                     <span>{product.name}</span>
                   </Link>
                 </li>
@@ -155,7 +156,7 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-6">
             <span className="text-slate-600">•</span>
             <span className="font-mono text-[11px] text-slate-500">
-              One ecosystem. Multiple ideas. Built with technology.
+              Eight products. One ecosystem. Built with technology.
             </span>
           </div>
         </div>

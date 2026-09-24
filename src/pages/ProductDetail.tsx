@@ -8,9 +8,11 @@ import {
   AlertCircle, 
   Sparkles,
   ArrowRight,
-  Code2
+  Code2,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
-import { getProductBySlug, getRelatedProducts } from '@/data/products';
+import { getProductBySlug, getRelatedProducts, getPrevAndNextProducts } from '@/data/products';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Badge } from '@/components/ui/Badge';
@@ -46,7 +48,7 @@ export const ProductDetail: React.FC = () => {
               to="/products"
               icon={<ArrowLeft className="w-4 h-4" />}
             >
-              Browse All Products
+              Browse All 8 Products
             </GradientButton>
           </GlassCard>
         </div>
@@ -54,6 +56,7 @@ export const ProductDetail: React.FC = () => {
     );
   }
 
+  const { prev, next } = getPrevAndNextProducts(product.slug);
   const relatedProducts = getRelatedProducts(product.slug, 3);
 
   const softwareSchema = {
@@ -88,6 +91,38 @@ export const ProductDetail: React.FC = () => {
 
       <article className="pt-32 pb-24 md:pt-36">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Previous / Next Product Sequential Navigation Header */}
+          <div className="flex items-center justify-between gap-4 mb-8 pb-4 border-b border-white/10 text-xs font-mono">
+            {prev ? (
+              <Link
+                to={`/products/${prev.slug}`}
+                className="inline-flex items-center gap-2 text-slate-400 hover:text-sky-300 transition-colors group"
+                aria-label={`Previous product: ${prev.name}`}
+              >
+                <ChevronLeft className="w-4 h-4 text-sky-400 group-hover:-translate-x-0.5 transition-transform" />
+                <span className="hidden sm:inline font-semibold">{prev.number}</span>
+                <span className="truncate max-w-[120px] sm:max-w-none">{prev.name}</span>
+              </Link>
+            ) : <div />}
+
+            <div className="product-number-badge px-3 py-1 rounded-md text-xs font-semibold">
+              Product {product.number} / 08
+            </div>
+
+            {next ? (
+              <Link
+                to={`/products/${next.slug}`}
+                className="inline-flex items-center gap-2 text-slate-400 hover:text-sky-300 transition-colors group"
+                aria-label={`Next product: ${next.name}`}
+              >
+                <span className="truncate max-w-[120px] sm:max-w-none">{next.name}</span>
+                <span className="hidden sm:inline font-semibold">{next.number}</span>
+                <ChevronRight className="w-4 h-4 text-sky-400 group-hover:translate-x-0.5 transition-transform" />
+              </Link>
+            ) : <div />}
+          </div>
+
           {/* Breadcrumb navigation */}
           <nav className="flex items-center gap-2 text-xs font-mono text-slate-400 mb-8" aria-label="Breadcrumb">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
@@ -102,6 +137,9 @@ export const ProductDetail: React.FC = () => {
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 pb-12 border-b border-white/10">
               <div className="space-y-4 max-w-3xl">
                 <div className="flex items-center gap-3">
+                  <span className="product-number-badge px-2.5 py-0.5 rounded text-xs font-semibold">
+                    {product.number} / 08
+                  </span>
                   <Badge status={product.status}>{product.status}</Badge>
                   <span className="text-xs font-mono text-sky-400 uppercase tracking-widest">
                     {product.category}
@@ -138,7 +176,7 @@ export const ProductDetail: React.FC = () => {
                   size="md"
                   icon={<ArrowLeft className="w-4 h-4" />}
                 >
-                  Back to Products
+                  Back to All Products
                 </GradientButton>
               </div>
             </div>
@@ -237,7 +275,7 @@ export const ProductDetail: React.FC = () => {
           </div>
 
           {/* Launch CTA Strip */}
-          <GlassCard className="p-8 sm:p-12 mb-20 border-sky-400/40 bg-gradient-to-r from-[#0B2A4A]/50 via-[#06152E]/80 to-[#0B2A4A]/50 text-center shadow-glow-electric">
+          <GlassCard className="p-8 sm:p-12 mb-16 border-sky-400/40 bg-gradient-to-r from-[#0B2A4A]/50 via-[#06152E]/80 to-[#0B2A4A]/50 text-center shadow-glow-electric">
             <h3 className="font-display font-bold text-2xl sm:text-3xl text-white mb-3">
               Ready to experience {product.name}?
             </h3>
@@ -253,6 +291,35 @@ export const ProductDetail: React.FC = () => {
               Open {product.name}
             </GradientButton>
           </GlassCard>
+
+          {/* Footer Product Navigation Bar */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-white/10 text-sm font-mono mb-16">
+            {prev ? (
+              <Link
+                to={`/products/${prev.slug}`}
+                className="w-full sm:w-auto px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center gap-3 text-slate-300 hover:text-white transition-all group"
+              >
+                <ChevronLeft className="w-5 h-5 text-sky-400 group-hover:-translate-x-1 transition-transform" />
+                <div>
+                  <div className="text-[10px] text-slate-400 uppercase">Previous (0{parseInt(product.number) - 1 > 0 ? parseInt(product.number) - 1 : 8})</div>
+                  <div className="font-semibold">{prev.name}</div>
+                </div>
+              </Link>
+            ) : <div />}
+
+            {next ? (
+              <Link
+                to={`/products/${next.slug}`}
+                className="w-full sm:w-auto px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-end gap-3 text-slate-300 hover:text-white transition-all text-right group"
+              >
+                <div>
+                  <div className="text-[10px] text-slate-400 uppercase">Next (0{parseInt(product.number) + 1 <= 8 ? parseInt(product.number) + 1 : 1})</div>
+                  <div className="font-semibold">{next.name}</div>
+                </div>
+                <ChevronRight className="w-5 h-5 text-sky-400 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            ) : <div />}
+          </div>
 
           {/* Related Ecosystem Products */}
           {relatedProducts.length > 0 && (

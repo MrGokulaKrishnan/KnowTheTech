@@ -9,8 +9,9 @@ export default {
     extend: {
       colors: {
         background: {
-          DEFAULT: '#020617',
-          deep: '#01040f',
+          DEFAULT: '#000000',
+          amoled: '#000000',
+          deep: '#020617',
           secondary: '#030712',
           surface: '#06152E',
           card: 'rgba(6, 21, 46, 0.55)',
@@ -21,6 +22,7 @@ export default {
           foreground: '#F8FAFC',
         },
         brand: {
+          amoled: '#000000',
           deepBlack: '#020617',
           midnight: '#06152E',
           deepBlue: '#0B2A4A',
@@ -30,6 +32,7 @@ export default {
           lightBlue: '#7DD3FC',
           purple: '#8B5CF6',
           white: '#F8FAFC',
+          slateText: '#94A3B8',
         },
         glass: {
           stroke: 'rgba(255, 255, 255, 0.08)',
@@ -44,9 +47,9 @@ export default {
         mono: ['JetBrains Mono', 'monospace'],
       },
       boxShadow: {
-        'glass-sm': '0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08)',
-        'glass': '0 12px 36px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 0 16px rgba(56, 189, 248, 0.03)',
-        'glass-hover': '0 20px 50px rgba(2, 132, 199, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.2), inset 0 0 20px rgba(6, 182, 212, 0.08)',
+        'glass-sm': '0 4px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08)',
+        'glass': '0 12px 36px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 0 16px rgba(56, 189, 248, 0.03)',
+        'glass-hover': '0 20px 50px rgba(2, 132, 199, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.2), inset 0 0 20px rgba(6, 182, 212, 0.1)',
         'glow-electric': '0 0 35px -5px rgba(2, 132, 199, 0.45)',
         'glow-cyan': '0 0 35px -5px rgba(6, 182, 212, 0.45)',
       },

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, ArrowRight, Sparkles } from 'lucide-react';
 import { PRODUCTS } from '@/data/products';
@@ -15,16 +15,19 @@ interface NodePosition {
 const CENTER: NodePosition = { x: 450, y: 260 };
 
 const NODE_POSITIONS: Record<string, NodePosition> = {
-  knowheretech: { x: 160, y: 110 },
-  knowthebinary: { x: 740, y: 110 },
-  knowthefile: { x: 800, y: 270 },
-  knowyourresume: { x: 730, y: 420 },
-  knowyourjob: { x: 170, y: 420 },
-  knowthemd: { x: 100, y: 270 },
+  knowthemice: { x: 140, y: 100 },
+  knowtomigrate: { x: 450, y: 70 },
+  knowthefile: { x: 760, y: 100 },
+  knowyourresume: { x: 810, y: 260 },
+  knowyourjob: { x: 750, y: 420 },
+  knowthemd: { x: 450, y: 450 },
+  knowthebinary: { x: 150, y: 420 },
+  'knowhere-tech': { x: 90, y: 260 },
+  knowheretech: { x: 90, y: 260 },
 };
 
 export const EcosystemGraph: React.FC = () => {
-  const [activeSlug, setActiveSlug] = useState<string>('knowthebinary');
+  const [activeSlug, setActiveSlug] = useState<string>('knowthemice');
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const activeProduct = PRODUCTS.find((p) => p.slug === activeSlug) || PRODUCTS[0];
@@ -32,10 +35,10 @@ export const EcosystemGraph: React.FC = () => {
   return (
     <div className="w-full">
       {/* Interactive Desktop Canvas */}
-      <div className="hidden md:block relative w-full aspect-[16/9] max-h-[560px] bg-slate-950/60 border border-white/10 rounded-3xl overflow-hidden shadow-2xl backdrop-blur-xl">
+      <div className="hidden md:block relative w-full aspect-[16/9] max-h-[580px] bg-black/80 border border-white/10 rounded-3xl overflow-hidden shadow-2xl backdrop-blur-xl">
         {/* Subtle grid & atmospheric glow */}
         <div className="absolute inset-0 subtle-grid opacity-30 pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-sky-500/15 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-sky-500/15 rounded-full blur-[110px] pointer-events-none" />
 
         {/* SVG Connector Lines */}
         <svg
@@ -79,7 +82,7 @@ export const EcosystemGraph: React.FC = () => {
                   <circle r={isSelected ? "4" : "2.5"} fill="#06B6D4">
                     <animateMotion
                       path={`M ${CENTER.x} ${CENTER.y} L ${pos.x} ${pos.y}`}
-                      dur={isSelected ? "2.5s" : "4s"}
+                      dur={isSelected ? "2.5s" : "4.5s"}
                       repeatCount="indefinite"
                     />
                   </circle>
@@ -97,10 +100,10 @@ export const EcosystemGraph: React.FC = () => {
           <motion.div
             animate={prefersReducedMotion ? {} : { scale: [1, 1.02, 1] }}
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-28 h-28 rounded-2xl bg-gradient-to-br from-[#0B2A4A] to-[#020617] border-2 border-sky-400/60 p-2 shadow-glow-electric backdrop-blur-xl flex flex-col items-center justify-center text-center group cursor-default"
+            className="w-28 h-28 rounded-2xl bg-gradient-to-br from-[#0B2A4A] to-[#000000] border-2 border-sky-400/60 p-2 shadow-glow-electric backdrop-blur-xl flex flex-col items-center justify-center text-center group cursor-default"
           >
-            <div className="w-12 h-12 rounded-xl overflow-hidden mb-1 shadow-md border border-white/20 bg-black flex items-center justify-center">
-              <img src="/brand/logo.png" alt="KnowTheTech Master Brand" className="w-full h-full object-contain" />
+            <div className="w-12 h-12 rounded-xl overflow-hidden mb-1 shadow-md border border-white/20">
+              <img src="/brand/logo.png" alt="KnowTheTech Master Brand" className="w-full h-full object-cover" />
             </div>
             <span className="font-display font-bold text-xs text-white tracking-wide">
               KnowTheTech
@@ -122,21 +125,21 @@ export const EcosystemGraph: React.FC = () => {
               type="button"
               onClick={() => setActiveSlug(product.slug)}
               className={`absolute -translate-x-1/2 -translate-y-1/2 z-20 group focus:outline-none focus:ring-2 focus:ring-sky-400 rounded-2xl transition-all duration-300 ${
-                isSelected ? 'scale-110' : 'hover:scale-105 opacity-80 hover:opacity-100'
+                isSelected ? 'scale-110' : 'hover:scale-105 opacity-85 hover:opacity-100'
               }`}
               style={{ left: `${(pos.x / 900) * 100}%`, top: `${(pos.y / 520) * 100}%` }}
-              aria-label={`Inspect ${product.name}`}
+              aria-label={`Inspect ${product.number} ${product.name}`}
             >
               <div
-                className={`w-36 px-3 py-2.5 rounded-xl text-left backdrop-blur-md transition-all ${
+                className={`w-36 px-3 py-2 rounded-xl text-left backdrop-blur-md transition-all ${
                   isSelected
                     ? 'bg-[#0B2A4A]/90 border-2 border-sky-400 shadow-[0_0_24px_rgba(56,189,248,0.4)]'
-                    : 'bg-[#06152E]/70 border border-white/10 hover:border-sky-400/40'
+                    : 'bg-[#06152E]/80 border border-white/10 hover:border-sky-400/40'
                 }`}
               >
-                <div className="flex items-center justify-between gap-1 mb-1">
-                  <span className="text-[9px] font-mono text-sky-400 uppercase tracking-wider truncate">
-                    {product.categories[0] || 'App'}
+                <div className="flex items-center justify-between gap-1 mb-0.5">
+                  <span className="text-[10px] font-mono font-bold text-sky-400">
+                    {product.number}
                   </span>
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                 </div>
@@ -151,7 +154,7 @@ export const EcosystemGraph: React.FC = () => {
         {/* Floating Instruction */}
         <div className="absolute bottom-4 left-6 text-xs text-slate-400 font-mono flex items-center gap-2">
           <Sparkles className="w-3.5 h-3.5 text-sky-400" />
-          <span>Click any satellite node to inspect ecosystem link</span>
+          <span>Click any satellite node (01–08) to inspect ecosystem link</span>
         </div>
       </div>
 
@@ -161,6 +164,9 @@ export const EcosystemGraph: React.FC = () => {
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div className="space-y-2 max-w-2xl">
               <div className="flex items-center gap-3">
+                <span className="product-number-badge px-2 py-0.5 rounded-md text-xs font-semibold">
+                  {activeProduct.number} / 08
+                </span>
                 <Badge status={activeProduct.status}>{activeProduct.status}</Badge>
                 <span className="text-xs font-mono text-sky-400 uppercase tracking-wider">
                   {activeProduct.category}

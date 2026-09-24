@@ -49,7 +49,7 @@ export const Home: React.FC = () => {
     <PageTransition>
       <SEOHead
         title="One Ecosystem. Multiple Ideas. Built with Technology."
-        description="KnowTheTech is the central technology ecosystem unifying developer tools, learning platforms, career applications, and technology experiments built by Gokulakrishnan K."
+        description="KnowTheTech is the central technology ecosystem unifying 8 independent web applications built by Gokulakrishnan K."
       />
       <JsonLd data={websiteSchema} id="home-website-schema" />
 
@@ -78,7 +78,7 @@ export const Home: React.FC = () => {
 
             {/* Supporting Copy */}
             <p className="text-lg sm:text-xl text-slate-300 leading-relaxed font-sans max-w-2xl mx-auto mb-10">
-              KnowTheTech is an evolving ecosystem of digital products, developer tools, learning platforms, career applications, and technology experiments built by Gokulakrishnan K.
+              Discover a growing ecosystem of digital products, developer tools, learning platforms, career applications, and utility software built under KnowTheTech.
             </p>
 
             {/* CTAs */}
@@ -99,7 +99,7 @@ export const Home: React.FC = () => {
                 icon={<Layers className="w-4 h-4 text-sky-400" />}
                 className="w-full sm:w-auto"
               >
-                Explore the Ecosystem
+                Explore Ecosystem
               </GradientButton>
             </div>
           </div>
@@ -108,7 +108,7 @@ export const Home: React.FC = () => {
           <div className="mt-20">
             <div className="text-center mb-6">
               <span className="text-xs font-mono uppercase tracking-widest text-sky-400">
-                Visual Ecosystem Network
+                Eight Products. One Ecosystem.
               </span>
               <h2 className="text-2xl font-display font-bold text-white mt-1">
                 Connected Product Architecture
@@ -127,11 +127,11 @@ export const Home: React.FC = () => {
           <SectionHeader
             eyebrow="Curated Lineup"
             title="Featured Applications"
-            description="Focused web applications engineered to solve concrete problems across learning, career intelligence, and document productivity."
+            description="Focused web applications engineered to solve concrete problems across hardware testing, migration tools, learning, career intelligence, and document productivity."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {featuredProducts.slice(0, 3).map((product) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredProducts.slice(0, 4).map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
@@ -142,19 +142,19 @@ export const Home: React.FC = () => {
               variant="secondary"
               iconRight={<ArrowRight className="w-4 h-4" />}
             >
-              Browse All 6 Products
+              Browse All 8 Products
             </GradientButton>
           </div>
         </div>
       </section>
 
-      {/* All Products with Dynamic Category Filter */}
-      <section className="py-20 border-t border-white/10 bg-[#01040f]/60 relative">
+      {/* All 8 Products with Dynamic Category Filter */}
+      <section className="py-20 border-t border-white/10 bg-[#000000]/60 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="The Full Suite"
             title="The KnowTheTech Ecosystem"
-            description="A collection of focused products designed to solve different problems across learning, careers, productivity, and developer workflows."
+            description="A collection of eight focused products designed to solve different problems across learning, careers, productivity, utilities, and developer workflows."
           />
 
           <ProductFilter
@@ -162,7 +162,7 @@ export const Home: React.FC = () => {
             onSelectCategory={setSelectedCategory}
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
@@ -205,7 +205,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Why KnowTheTech / Product Philosophy */}
-      <section className="py-20 border-t border-white/10 bg-[#01040f]/40 relative">
+      <section className="py-20 border-t border-white/10 bg-[#000000]/40 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Core Philosophy"
@@ -222,7 +222,7 @@ export const Home: React.FC = () => {
                 Tangible Problem Solving
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed font-sans">
-                Each product is built to address real developer and user friction — whether making algorithms visual, inspecting resumes with clear heuristics, or viewing markdown cleanly.
+                From device utilities and migration tools to developer learning, AI-powered career products, document utilities, and developer tools — KnowTheTech brings independent ideas together under one technology ecosystem.
               </p>
             </GlassCard>
 

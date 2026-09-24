@@ -3,16 +3,23 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { ProductFilter } from '@/components/products/ProductFilter';
 
 describe('ProductFilter Component', () => {
-  it('renders all category pills with counts', () => {
+  it('renders category pills with counts', () => {
     const onSelect = vi.fn();
     const counts = {
-      All: 6,
-      Education: 2,
-      'Developer Tools': 3,
-      Career: 3,
-      AI: 2,
+      All: 8,
+      'Device Connectivity': 1,
+      Migration: 1,
+      Documents: 2,
       Productivity: 3,
-      Documents: 3,
+      AI: 2,
+      Career: 2,
+      Jobs: 1,
+      'Developer Tools': 3,
+      Markdown: 1,
+      DSA: 1,
+      'Computer Science': 1,
+      'Developer Learning': 2,
+      Utility: 3,
     };
 
     render(
@@ -24,12 +31,11 @@ describe('ProductFilter Component', () => {
     );
 
     expect(screen.getByRole('button', { name: /all/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /education/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /developer tools/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /career/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /device connectivity/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /migration/i })).toBeInTheDocument();
 
-    const educationBtn = screen.getByRole('button', { name: /education/i });
-    fireEvent.click(educationBtn);
-    expect(onSelect).toHaveBeenCalledWith('Education');
+    const connectivityBtn = screen.getByRole('button', { name: /device connectivity/i });
+    fireEvent.click(connectivityBtn);
+    expect(onSelect).toHaveBeenCalledWith('Device Connectivity');
   });
 });

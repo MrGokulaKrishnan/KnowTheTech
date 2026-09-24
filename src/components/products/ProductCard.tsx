@@ -9,6 +9,8 @@ import {
   BookOpen, 
   ExternalLink, 
   ArrowRight,
+  Mouse,
+  RefreshCw,
   LucideIcon
 } from 'lucide-react';
 import { Product } from '@/types/product';
@@ -17,12 +19,14 @@ import { Badge } from '../ui/Badge';
 import { GradientButton } from '../ui/GradientButton';
 
 const ICON_MAP: Record<string, LucideIcon> = {
-  GraduationCap,
-  Binary,
+  Mouse,
+  RefreshCw,
   FileText,
   Sparkles,
   Briefcase,
   BookOpen,
+  Binary,
+  GraduationCap,
 };
 
 interface ProductCardProps {
@@ -37,17 +41,25 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     <GlassCard
       hoverEffect
       glow
-      className="p-6 flex flex-col justify-between group h-full border-white/10 hover:border-sky-500/30"
+      className="p-6 flex flex-col justify-between group h-full border-white/10 hover:border-sky-500/30 relative"
     >
       <div>
-        {/* Header: Icon & Status Badge */}
-        <div className="flex items-start justify-between gap-4 mb-4">
+        {/* Header: Icon, Status Badge & Product Number */}
+        <div className="flex items-start justify-between gap-3 mb-4">
           <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500/20 to-cyan-500/10 border border-sky-400/30 flex items-center justify-center text-sky-400 group-hover:scale-105 group-hover:text-sky-300 transition-all shadow-glass-sm">
             <IconComponent className="w-6 h-6" />
           </div>
-          <Badge status={product.status}>
-            {product.status}
-          </Badge>
+
+          <div className="flex items-center gap-2">
+            <Badge status={product.status}>
+              {product.status}
+            </Badge>
+
+            {/* Product Number Badge (e.g., 01 / 08) */}
+            <span className="product-number-badge px-2 py-0.5 rounded-md text-[11px] font-semibold tracking-wider">
+              {product.number} / 08
+            </span>
+          </div>
         </div>
 
         {/* Category & Title */}
