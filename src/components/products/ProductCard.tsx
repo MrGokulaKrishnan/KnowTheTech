@@ -108,11 +108,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </Link>
 
         <GradientButton
-          href={product.subsiteUrl || product.url}
+          href={product.url}
+          external
           size="sm"
           variant="secondary"
           iconRight={<ExternalLink className="w-3.5 h-3.5" />}
-          aria-label={`Open ${product.name}`}
+          aria-label={`Open ${product.name} in a new tab`}
         >
           Visit
         </GradientButton>

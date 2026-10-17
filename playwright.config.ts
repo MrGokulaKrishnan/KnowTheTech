@@ -17,6 +17,10 @@ export default defineConfig({
       name: 'Desktop Chrome',
       use: { ...devices['Desktop Chrome'] },
     },
+    {
+      name: 'Mobile Safari',
+      use: { ...devices['iPhone 13'] },
+    },
   ],
   webServer: {
     command: 'npm run preview -- --port 4173',

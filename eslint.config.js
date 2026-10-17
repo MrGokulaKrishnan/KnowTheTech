@@ -4,7 +4,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 
 export default tseslint.config(
-  { ignores: ['dist', 'node_modules', 'tests/**', 'vitest.config.ts', 'playwright.config.ts', '.staging/**', 'scripts/**'] },
+  { ignores: ['dist', 'node_modules', 'tests/**', 'vitest.config.ts', 'playwright.config.ts'] },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],

@@ -6,9 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "build:subsites": "node scripts/build-ecosystem.mjs all",
-    "build:all": "npm run build && node scripts/build-ecosystem.mjs all && node scripts/audit-subsites.mjs",
-    "audit:subsites": "node scripts/audit-subsites.mjs",
     "preview": "vite preview",
     "lint": "eslint .",
     "test": "vitest run",

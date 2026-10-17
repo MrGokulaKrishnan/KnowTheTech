@@ -5,86 +5,9 @@
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**",
-      "**/*.exe",
-      "**/*.apk",
-      "**/*.msi",
-      "**/*.dll",
-      "**/*.zip"
+      "**/node_modules/**"
     ],
     "rewrites": [
-      {
-        "source": "/knowtomigrate",
-        "destination": "/knowtomigrate/index.html"
-      },
-      {
-        "source": "/knowtomigrate/**",
-        "destination": "/knowtomigrate/index.html"
-      },
-      {
-        "source": "/knowthemice",
-        "destination": "/knowthemice/index.html"
-      },
-      {
-        "source": "/knowthemice/**",
-        "destination": "/knowthemice/index.html"
-      },
-      {
-        "source": "/smartmigrate",
-        "destination": "/smartmigrate/index.html"
-      },
-      {
-        "source": "/smartmigrate/**",
-        "destination": "/smartmigrate/index.html"
-      },
-      {
-        "source": "/knowthemd",
-        "destination": "/knowthemd/index.html"
-      },
-      {
-        "source": "/knowthemd/**",
-        "destination": "/knowthemd/index.html"
-      },
-      {
-        "source": "/knowthefile",
-        "destination": "/knowthefile/index.html"
-      },
-      {
-        "source": "/knowthefile/**",
-        "destination": "/knowthefile/index.html"
-      },
-      {
-        "source": "/knowyourresume",
-        "destination": "/knowyourresume/index.html"
-      },
-      {
-        "source": "/knowyourresume/**",
-        "destination": "/knowyourresume/index.html"
-      },
-      {
-        "source": "/knowyourjob",
-        "destination": "/knowyourjob/index.html"
-      },
-      {
-        "source": "/knowyourjob/**",
-        "destination": "/knowyourjob/index.html"
-      },
-      {
-        "source": "/knowthebinary",
-        "destination": "/knowthebinary/index.html"
-      },
-      {
-        "source": "/knowthebinary/**",
-        "destination": "/knowthebinary/index.html"
-      },
-      {
-        "source": "/knowheretech",
-        "destination": "/knowheretech/index.html"
-      },
-      {
-        "source": "/knowheretech/**",
-        "destination": "/knowheretech/index.html"
-      },
       {
         "source": "**",
         "destination": "/index.html"

@@ -162,7 +162,8 @@ export const ProductDetail: React.FC = () => {
               {/* Action Box */}
               <div className="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
                 <GradientButton
-                  href={product.subsiteUrl || product.url}
+                  href={product.url}
+                  external
                   size="lg"
                   iconRight={<ExternalLink className="w-4 h-4" />}
                 >
@@ -282,7 +283,8 @@ export const ProductDetail: React.FC = () => {
               Explore the live application directly in your browser with zero sign-up friction.
             </p>
             <GradientButton
-              href={product.subsiteUrl || product.url}
+              href={product.url}
+              external
               size="lg"
               iconRight={<ExternalLink className="w-4 h-4" />}
             >
