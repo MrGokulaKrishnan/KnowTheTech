@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:subsites": "node scripts/build-ecosystem.mjs all",
+    "build:all": "npm run build && node scripts/build-ecosystem.mjs all && node scripts/audit-subsites.mjs",
+    "audit:subsites": "node scripts/audit-subsites.mjs",
     "preview": "vite preview",
     "lint": "eslint .",
     "test": "vitest run",
@@ -36,6 +39,7 @@
     "vitest": "^4.1.11"
   },
   "dependencies": {
+    "@esbuild/win32-x64": "0.28.2",
     "@hookform/resolvers": "^5.9.1",
     "@vitejs/plugin-react": "4.7.0",
     "clsx": "^2.1.1",

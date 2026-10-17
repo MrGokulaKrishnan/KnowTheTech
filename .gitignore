@@ -35,6 +35,7 @@ coverage/
 *.sw?
 *.tsbuildinfo
 
-# Firebase
+# Firebase & Staging
 .firebase/
+.staging/
 

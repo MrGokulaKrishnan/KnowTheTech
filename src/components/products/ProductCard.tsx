@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   GraduationCap, 
@@ -108,12 +108,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </Link>
 
         <GradientButton
-          href={product.url}
-          external
+          href={product.subsiteUrl || product.url}
           size="sm"
           variant="secondary"
           iconRight={<ExternalLink className="w-3.5 h-3.5" />}
-          aria-label={`Open ${product.name} in a new tab`}
+          aria-label={`Open ${product.name}`}
         >
           Visit
         </GradientButton>

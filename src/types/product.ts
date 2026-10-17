@@ -1,4 +1,4 @@
-﻿export type ProductStatus = "LIVE" | "BETA" | "DEVELOPMENT";
+export type ProductStatus = "LIVE" | "BETA" | "DEVELOPMENT";
 
 export type ProductCategory = 
   | "All"
@@ -44,6 +44,7 @@ export interface Product {
   architecture: string[];
   accentColor?: string; // Secondary accent token
   relatedProducts?: string[]; // Slugs of related ecosystem applications
+  subsiteUrl?: string; // Sub-website path within KnowTheTech ecosystem
   seo: ProductSEO;
 }
 

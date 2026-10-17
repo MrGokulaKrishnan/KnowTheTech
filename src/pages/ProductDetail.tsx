@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 
   ArrowLeft, 
@@ -162,8 +162,7 @@ export const ProductDetail: React.FC = () => {
               {/* Action Box */}
               <div className="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
                 <GradientButton
-                  href={product.url}
-                  external
+                  href={product.subsiteUrl || product.url}
                   size="lg"
                   iconRight={<ExternalLink className="w-4 h-4" />}
                 >
@@ -283,8 +282,7 @@ export const ProductDetail: React.FC = () => {
               Explore the live application directly in your browser with zero sign-up friction.
             </p>
             <GradientButton
-              href={product.url}
-              external
+              href={product.subsiteUrl || product.url}
               size="lg"
               iconRight={<ExternalLink className="w-4 h-4" />}
             >
