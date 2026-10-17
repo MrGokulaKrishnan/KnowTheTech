@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
+import { fixAllSubsiteAssets } from './fix-subsite-assets.mjs';
 
 const ROOT_DIR = process.cwd();
 const STAGING_ROOT = path.join(ROOT_DIR, '.staging');
@@ -415,6 +416,9 @@ async function run() {
     console.error(`Unknown target: ${target}. Options: all, ${Object.keys(tasks).join(', ')}`);
     process.exit(1);
   }
+
+  // Normalize asset paths across all sub-websites
+  fixAllSubsiteAssets();
 
   console.log('\n========================================');
   console.log('🎉 ALL REQUESTED SUB-WEBSITES BUILT SUCCESSFULLY!');
